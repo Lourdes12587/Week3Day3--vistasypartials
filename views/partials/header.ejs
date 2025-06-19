@@ -1,0 +1,22 @@
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Mi Sitio</div>
+    <div class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="http://localhost:4000/">Inicio</a>
+      <a href="http://localhost:4000/login">Iniciar Sesion</a>
+      <a href="http://localhost:4000/register">Registrate</a>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
