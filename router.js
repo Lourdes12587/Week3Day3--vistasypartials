@@ -42,13 +42,13 @@ router.get('/admin', (req, res) => {
     res.render('admin', {
         login: true,
         name: req.session.name,
-        rol: req.session.rol  // ✅ enviamos el rol a la vista
+        rol: req.session.rol  
     });
   } else {
     res.render('admin', { 
         login: false,
         name: "Debe iniciar sesión",
-        rol: null              // ✅ evitamos error en la vista
+        rol: null          
     });
   }
 });
@@ -57,7 +57,7 @@ router.get('/productos', (req, res) => {
   res.render('productos');
 });
 
-//ruta cerrar sesion
+//cerrar sesion
 router.get ('/logout', function (req,res) {
   res.session.destroy (() => {
     res.redirect('/index')
