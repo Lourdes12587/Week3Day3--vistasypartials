@@ -5,23 +5,31 @@
 <link rel="stylesheet" href="/resources/css/login.css">
 
 <main class="auth-wrapper">
-  <% if (login) { %>
     <form class="login-container" action="/login" method="POST">
       <h2>Iniciar Sesión</h2>
-      <input type="text" name="user" placeholder="Usuario" required>
-      <input type="password" name="pass" placeholder="Contraseña" required>
-      <button type="submit">Ingresar</button>
+        <input type="text" name="user" id="user" placeholder="Ingrese su usuario">
+        <input type="password" name="pass" id="pass" placeholder="Ingrese su contraseña">
+        <button type="submit">Ingresar</button>
     </form>
-  <% } else { %>
     <div class="denied-container">
-      <p>⛔ Acceso denegado</p>
-      <h1>¿Ya te registraste?</h1>
-      <button>
-      <a class="register-link" href="/register">CREA UN CUENTA</a>
-      </button>
+      <a href="/register" class="register-link">Registrarse</a>
     </div>
-  <% } %>
-</main>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != 'undefined') { %>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then (()=> {
+          window.location ='/<%= ruta%>'
+        })
+      </script>
+      <% } %>
+  </main>
 
         

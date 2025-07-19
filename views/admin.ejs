@@ -1,0 +1,32 @@
+<%- include('partials/head') %>
+
+<link rel="stylesheet" href="/resources/css/admin.css">
+
+<%- include('partials/header') %>
+
+<div class="admin-container">
+  <h2>Bienvenido, <%= name %></h2>
+
+  <div class="admin-info">
+    <% if (rol === 'administrador') { %>
+      <p class="admin-role">👑 Rol: Administrador</p>
+      <ul>
+        <li>Gestión de usuarios</li>
+        <li>Ver estadísticas</li>
+        <li>Acceso a configuración</li>
+      </ul>
+    <% } else if (rol === 'editor') { %>
+      <p class="editor-role">📝 Rol: Editor</p>
+      <p>Solo puedes cerrar sesión.</p>
+    <% } else { %>
+      <p>No tienes permisos válidos.</p>
+    <% } %>
+  </div>
+
+  <a href="/logout" class="logout-btn">Cerrar sesión</a>
+</div>
+
+
+
+
+   
